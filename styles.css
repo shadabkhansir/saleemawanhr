@@ -64,7 +64,7 @@ p { margin: 0 0 1em; }
   border-bottom: 1px solid var(--line);
 }
 .nav { display: flex; align-items: center; justify-content: space-between; height: var(--header-h); }
-.brand { display: flex; align-items: center; gap: .6rem; text-decoration: none; color: var(--navy); font-weight: 600; }
+.brand { white-space: nowrap; display: flex; align-items: center; gap: .6rem; text-decoration: none; color: var(--navy); font-weight: 600; }
 .brand-mark {
   display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px;
   background: var(--navy); color: #fff; font-size: .85rem; letter-spacing: .03em;
@@ -74,7 +74,7 @@ p { margin: 0 0 1em; }
 .menu a:not(.btn):hover { color: var(--accent); }
 .menu-btn { display: none; }
 
-@media (max-width: 860px) {
+@media (max-width: 1080px) {
   .menu-btn {
     display: flex; flex-direction: column; justify-content: center; gap: 5px;
     width: 42px; height: 42px; padding: 0 10px; border: 1px solid var(--line); border-radius: 10px;
@@ -231,3 +231,36 @@ p { margin: 0 0 1em; }
 }
 .card p.edu { color: var(--text); }
 .card p.edu strong { color: var(--navy); }
+
+/* ---------- Recommendations ---------- */
+.section-sub { color: var(--muted); max-width: 44em; margin: -1rem 0 2rem; }
+.recs { columns: 2 340px; column-gap: 1.2rem; }
+.rec {
+  break-inside: avoid; margin: 0 0 1.2rem; padding: 1.5rem;
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow);
+  border-top: 3px solid var(--accent);
+}
+.rec blockquote { margin: 0 0 1.2rem; color: var(--text); font-size: .98rem; }
+.rec figcaption { display: flex; gap: .8rem; align-items: flex-start; font-size: .9rem; line-height: 1.45; }
+.rec figcaption strong { color: var(--navy); }
+.rec-avatar {
+  flex: none; display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%;
+  background: var(--accent-soft); color: var(--accent); font-weight: 600; font-size: .85rem;
+}
+.rec-title { color: var(--muted); }
+.rec-rel { color: var(--accent); font-size: .82rem; font-weight: 500; }
+.more-link { margin: .4rem 0 0; font-weight: 500; }
+.more-link a, .cred-more a, .cred-list a { text-decoration: none; }
+.more-link a:hover, .cred-more a:hover, .cred-list a:hover { text-decoration: underline; }
+
+/* ---------- Credentials list ---------- */
+.card p.edu { margin-bottom: .9rem; }
+.card p.edu:last-child { margin-bottom: 0; }
+.cred-list { list-style: none; padding: 0; margin: 0 0 1rem; }
+.cred-list li { padding: .7rem 0; border-top: 1px solid var(--line); font-size: .92rem; }
+.cred-list li:first-child { border-top: 0; padding-top: 0; }
+.cred-list strong { display: block; color: var(--navy); font-weight: 500; }
+.cred-list span { display: block; color: var(--muted); font-size: .85rem; }
+.cred-list a { font-size: .85rem; font-weight: 500; }
+.card p.cred-more { font-size: .88rem; font-weight: 500; }
+.contact-sub a { color: #fff; }
