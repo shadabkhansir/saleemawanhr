@@ -329,3 +329,13 @@ p { margin: 0 0 1em; }
 .slider-dots button::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--line); transition: background .2s, transform .2s; }
 .slider-dots button[aria-selected="true"]::before { background: var(--accent); transform: scale(1.25); }
 html:not(.js) .slider-nav { display: none; }
+
+/* Recommendation cards: quote mark on top, name pinned to the bottom,
+   so cards of different lengths still look complete side by side */
+.rec blockquote { position: relative; padding-top: 2.1rem; font-size: 1rem; line-height: 1.7; }
+.rec blockquote::before {
+  content: "\201C"; position: absolute; top: -.35rem; left: -.1rem;
+  font-size: 3.6rem; line-height: 1; color: var(--accent); opacity: .35; font-family: Georgia, serif;
+}
+.rec figcaption { margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--line); }
+.rec blockquote { margin-bottom: 1.2rem; }
