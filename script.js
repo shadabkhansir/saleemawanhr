@@ -41,6 +41,12 @@
   var track = document.getElementById("recs-track");
   if (track) {
     var slides = track.children;
+    /* Size each quote by length: short quotes larger, long ones smaller */
+    Array.prototype.forEach.call(slides, function (sl) {
+      var q = sl.querySelector("blockquote");
+      var n = q ? q.textContent.trim().split(/\s+/).length : 0;
+      sl.classList.add(n <= 38 ? "q-s" : n <= 58 ? "q-m" : "q-l");
+    });
     var dotsBox = document.querySelector(".slider-dots");
     var dots = [];
     function perView() { return Math.max(1, Math.round(track.clientWidth / slides[0].getBoundingClientRect().width)); }
