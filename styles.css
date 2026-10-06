@@ -234,9 +234,20 @@ p { margin: 0 0 1em; }
 
 /* ---------- Recommendations ---------- */
 .section-sub { color: var(--muted); max-width: 44em; margin: -1rem 0 2rem; }
-.recs { columns: 2 340px; column-gap: 1.2rem; }
+/* Slider: a scroll-snap track, so swiping works natively on phones */
+.recs {
+  --per: 3;
+  display: grid; grid-auto-flow: column;
+  grid-auto-columns: calc((100% - (var(--per) - 1) * 1.2rem) / var(--per));
+  gap: 1.2rem; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth;
+  overscroll-behavior-x: contain; scrollbar-width: none; padding: 4px 2px 8px;
+}
+.recs::-webkit-scrollbar { display: none; }
+@media (max-width: 960px) { .recs { --per: 2; } }
+@media (max-width: 640px) { .recs { --per: 1; } }
 .rec {
-  break-inside: avoid; margin: 0 0 1.2rem; padding: 1.5rem;
+  scroll-snap-align: start; display: flex; flex-direction: column; justify-content: space-between;
+  margin: 0; padding: 1.5rem;
   background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow);
   border-top: 3px solid var(--accent);
 }
@@ -301,3 +312,20 @@ p { margin: 0 0 1em; }
   .audience { grid-template-columns: 1fr; }
   .consult-cta .btn { width: 100%; }
 }
+
+.slider-nav { display: flex; align-items: center; justify-content: center; gap: .75rem; margin-top: 1.4rem; }
+.slider-btn {
+  flex: none; width: 44px; height: 44px; border-radius: 50%; cursor: pointer;
+  border: 1.5px solid var(--navy); background: #fff; color: var(--navy);
+  font-size: 1.5rem; line-height: 1; display: grid; place-items: center; padding: 0 0 3px;
+  transition: background .2s, color .2s;
+}
+.slider-btn:hover { background: var(--navy); color: #fff; }
+.slider-dots { display: flex; flex-wrap: wrap; justify-content: center; gap: 0; }
+.slider-dots button {
+  width: 20px; height: 24px; padding: 0; border: 0; background: none; cursor: pointer;
+  display: grid; place-items: center;
+}
+.slider-dots button::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--line); transition: background .2s, transform .2s; }
+.slider-dots button[aria-selected="true"]::before { background: var(--accent); transform: scale(1.25); }
+html:not(.js) .slider-nav { display: none; }
