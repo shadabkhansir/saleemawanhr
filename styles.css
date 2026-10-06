@@ -352,3 +352,4 @@ html:not(.js) .slider-nav { display: none; }
 .hrw-ico { fill: none; stroke: var(--navy); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 .hrw-lab { fill: var(--navy); font-size: 16.5px; font-weight: 600; }
 @media (max-width: 860px) { .hr-wheel { margin: 1.4rem auto .5rem; max-width: 380px; } }
+.rec figcaption { min-height: 5.1rem; }
