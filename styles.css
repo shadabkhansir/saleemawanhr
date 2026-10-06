@@ -342,8 +342,13 @@ html:not(.js) .slider-nav { display: none; }
 
 /* ---------- About: HR services wheel ---------- */
 .hr-wheel { display: block; width: 100%; max-width: 460px; height: auto; margin-top: 1.4rem; font-family: "Inter", system-ui, sans-serif; }
-.hrw-hub-t { fill: #3d4752; font-size: 40px; font-weight: 600; letter-spacing: .01em; }
-.hrw-node > circle { fill: #fff; }
-.hrw-ico { fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-.hrw-lab { fill: #4b5563; font-size: 12px; font-weight: 600; letter-spacing: 0; }
-@media (max-width: 860px) { .hr-wheel { margin: 1.4rem auto .5rem; max-width: 420px; } }
+.hrw-ring { fill: none; stroke: var(--line); stroke-width: 2; stroke-dasharray: 4 7; }
+.hrw-spoke { stroke: #c7d6d4; stroke-width: 2; }
+.hrw-halo { fill: var(--accent-soft); }
+.hrw-hub { fill: var(--navy); }
+.hrw-hub-t { fill: #fff; font-size: 25px; font-weight: 600; letter-spacing: -.01em; }
+.hrw-hub-s { fill: #9fd3cc; font-size: 12px; font-weight: 600; letter-spacing: .14em; }
+.hrw-node > circle { fill: #fff; stroke: var(--accent); stroke-width: 2.5; }
+.hrw-ico { fill: none; stroke: var(--navy); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.hrw-lab { fill: var(--navy); font-size: 16.5px; font-weight: 600; }
+@media (max-width: 860px) { .hr-wheel { margin: 1.4rem auto .5rem; max-width: 380px; } }
