@@ -1,0 +1,12 @@
+{
+  "name": "Muhammad Saleem Awan, HR",
+  "short_name": "Saleem Awan HR",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#0f2a44",
+  "icons": [
+    { "src": "/images/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/images/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

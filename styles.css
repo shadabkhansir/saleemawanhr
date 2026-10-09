@@ -372,3 +372,18 @@ html:not(.js) .slider-nav { display: none; }
 .rec.q-s blockquote { font-size: clamp(1.3rem, 2.4vw, 1.45rem); }
 .rec.q-m blockquote { font-size: clamp(1.1rem, 2vw, 1.25rem); }
 .rec.q-l blockquote { font-size: clamp(1rem, 1.7vw, 1.1rem); }
+
+/* ---------- FAQ ---------- */
+.faq { display: grid; gap: .75rem; max-width: 860px; }
+.faq-item { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 0 1.25rem; }
+.faq-item summary {
+  cursor: pointer; list-style: none; padding: 1rem 2rem 1rem 0; position: relative;
+  font-weight: 600; color: var(--navy);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+"; position: absolute; right: 0; top: 50%; transform: translateY(-50%);
+  font-size: 1.4rem; font-weight: 400; color: var(--accent);
+}
+.faq-item[open] summary::after { content: "−"; }
+.faq-item p { margin: 0 0 1.1rem; color: var(--muted); }
