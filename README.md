@@ -12,6 +12,9 @@ A simple, fast one-page website: plain HTML, CSS and a little JavaScript. No bui
 | `images/saleem.webp`, `images/saleem.jpg` | Profile photo (portrait, 4:5) |
 | `resume/Muhammad-Saleem-Awan-Resume.pdf` | The résumé behind the "View résumé" buttons (hero and contact sections) |
 | `robots.txt`, `sitemap.xml` | Help search engines find and index the site |
+| `images/og-image.jpg` | 1200×630 preview image shown when the link is shared (LinkedIn, WhatsApp, X) |
+| `favicon.ico`, `favicon.svg`, `apple-touch-icon.png`, `images/icon-*.png`, `site.webmanifest` | Browser, phone and Google search-result icons |
+| `404.html` | "Page not found" page |
 | `fonts/` | Inter font files (SIL Open Font License) |
 
 ## Updating
@@ -26,6 +29,12 @@ Nothing else to change: the buttons always load the newest copy.
 is one `<article class="card svc">` block; copy, edit or delete blocks as needed.
 
 **Photo:** replace both files in `images/` with the same names.
+
+**FAQ:** in `index.html`, find the `FAQ` section. If you change a question or answer,
+change the same text in the `FAQPage` block near the top of the file (inside `<head>`)
+so Google sees matching content.
+
+**After any content change:** update the `<lastmod>` date in `sitemap.xml`.
 
 **Text:** edit `index.html` on GitHub (pencil icon) and commit.
 
